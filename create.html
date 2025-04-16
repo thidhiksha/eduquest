@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Quiz - EduQuest</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <!-- Your existing CSS -->
+    <link rel="stylesheet" href="create.css"> <!-- Separate CSS for Create Page -->
+</head>
+<body>
+
+<div class="container mt-4">
+    <h2 class="text-center">Create a New Quiz</h2>
+    
+    <form id="quizForm">
+        <div class="mb-3">
+            <label for="quizTitle" class="form-label">Quiz Title</label>
+            <input type="text" class="form-control" id="quizTitle" placeholder="Enter quiz title" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="quizSubject" class="form-label">Subject</label>
+            <input type="text" class="form-control" id="quizSubject" placeholder="Enter subject" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="quizTime" class="form-label">Time Limit (minutes)</label>
+            <input type="number" class="form-control" id="quizTime" placeholder="Enter time limit" required>
+        </div>
+
+        <h4>Questions</h4>
+        <div id="questionsContainer">
+            <div class="question-item mb-3">
+                <label class="form-label">Question 1</label>
+                <input type="text" class="form-control" name="question[]" placeholder="Enter question" required>
+                <div class="options mt-2">
+                    <input type="text" class="form-control mb-1" name="option1[]" placeholder="Option 1" required>
+                    <input type="text" class="form-control mb-1" name="option2[]" placeholder="Option 2" required>
+                    <input type="text" class="form-control mb-1" name="option3[]" placeholder="Option 3" required>
+                    <input type="text" class="form-control mb-1" name="option4[]" placeholder="Option 4" required>
+                    <label class="mt-1">Correct Answer:</label>
+                    <select class="form-select" name="correctAnswer[]" required>
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                        <option value="4">Option 4</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <button type="button" class="btn btn-primary" id="addQuestion">Add Question</button>
+        <button type="submit" class="btn btn-success mt-3">Save Quiz</button>
+        <li><a href="admindash.html"><i class="fas fa-sign-out-alt"></i> Back </a></li>
+    </form>
+</div>
+
+<script>
+document.getElementById("addQuestion").addEventListener("click", function() {
+    let questionCount = document.querySelectorAll(".question-item").length + 1;
+    let newQuestion = `
+        <div class="question-item mb-3">
+            <label class="form-label">Question ${questionCount}</label>
+            <input type="text" class="form-control" name="question[]" placeholder="Enter question" required>
+            <div class="options mt-2">
+                <input type="text" class="form-control mb-1" name="option1[]" placeholder="Option 1" required>
+                <input type="text" class="form-control mb-1" name="option2[]" placeholder="Option 2" required>
+                <input type="text" class="form-control mb-1" name="option3[]" placeholder="Option 3" required>
+                <input type="text" class="form-control mb-1" name="option4[]" placeholder="Option 4" required>
+                <label class="mt-1">Correct Answer:</label>
+                <select class="form-select" name="correctAnswer[]" required>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                    <option value="4">Option 4</option>
+                </select>
+            </div>
+        </div>`;
+    document.getElementById("questionsContainer").insertAdjacentHTML("beforeend", newQuestion);
+});
+</script>
+
+</body>
+</html>

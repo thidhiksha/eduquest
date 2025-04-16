@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Performance - EduQuest</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2 class="text-center text-primary">Student Performance Overview</h2>
+
+        <!-- Performance Summary -->
+        <div class="row text-center my-4">
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <h5>Highest Score</h5>
+                    <p class="text-success fs-4">98%</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <h5>Average Score</h5>
+                    <p class="text-warning fs-4">75%</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <h5>Lowest Score</h5>
+                    <p class="text-danger fs-4">42%</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="d-flex justify-content-between mb-3">
+            <input type="text" class="form-control search-box" id="searchStudent" placeholder="Search student...">
+            <button class="btn btn-secondary">Export Report</button>
+        </div>
+
+        <!-- Student Performance Table -->
+        <div class="card p-3">
+            <table class="table table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>#</th>
+                        <th>Student Name</th>
+                        <th>Quiz Title</th>
+                        <th>Score</th>
+                        <th>Performance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Olive</td>
+                        <td>Maths</td>
+                        <td>95%</td>
+                        <td><span class="badge bg-success">Excellent</span></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Charisma </td>
+                        <td>Physics</td>
+                        <td>68%</td>
+                        <td><span class="badge bg-warning">Average</span></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Robin</td>
+                        <td>Science</td>
+                        <td>42%</td>
+                        <td><span class="badge bg-danger">Needs Improvement</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            <a href="admindash.html" class="btn btn-primary w-100">Back to Dashboard</a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Results - EduQuest</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2 class="text-center text-primary">Student Quiz Results</h2>
+
+        <!-- Filter Options -->
+        <div class="row my-4">
+            <div class="col-md-6">
+                <input type="text" class="form-control search-box" id="searchStudent" placeholder="Search student...">
+            </div>
+            <div class="col-md-6">
+                <select class="form-select" id="filterQuiz">
+                    <option value="">Filter by Quiz</option>
+                    <option value="Math Basics">Maths</option>
+                    <option value="Physics Quiz">Physics</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Results Table -->
+        <div class="card p-3">
+            <table class="table table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>#</th>
+                        <th>Student Name</th>
+                        <th>Quiz Title</th>
+                        <th>Score</th>
+                        <th>Review</th>
+                    </tr>
+                </thead>
+                <tbody id="resultsTable">
+                    <tr>
+                        <td>1</td>
+                        <td>Olive</td>
+                        <td>Maths</td>
+                        <td>95%</td>
+                        <td>
+                            <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#reviewModal">View</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Charisma</td>
+                        <td>Physics</td>
+                        <td>68%</td>
+                        <td>
+                            <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#reviewModal">View</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Review Modal -->
+    <div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Quiz Review - Olive</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Quiz:</strong> Math </p>
+                    <p><strong>Score:</strong> 95%</p>
+                    <p><strong>Correct Answers:</strong> 19/20</p>
+                    <p><strong>Wrong Answers:</strong> 1</p>
+                    <p><strong>Remarks:</strong> Excellent performance!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
